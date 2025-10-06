@@ -1,0 +1,173 @@
+:root {
+  --max: 1200px;
+  --gap: 12px;
+}
+
+/* Base layout */
+body {
+  margin: 0;
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #0f0f0f;
+  color: #eee;
+}
+
+header.site-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #222;
+  background: #0f0f0f;
+}
+
+footer.site-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #222;
+  text-align: center;
+  color: #666;
+  background: #0f0f0f;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Stage (YouTube-style video area) */
+.stage {
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.stage-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.stage video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #303030;
+  color: #fff;
+  border: 1px solid #3a3a3a;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #3a3a3a;
+}
+
+.btn.secondary {
+  background: #1f1f1f;
+}
+
+.btn.secondary:hover {
+  background: #2a2a2a;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input[type="file"] {
+  color: #ddd;
+}
+
+.hint {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Results grid (2×5) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--gap);
+  margin-top: 16px;
+}
+
+.tile {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 180px;
+  display: flex;
+  gap: 10px;
+}
+
+.tile.empty {
+  align-items: center;
+  justify-content: center;
+  color: #444;
+}
+
+.thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #0a0a0a;
+  border: 1px solid #222;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.title {
+  font-weight: 600;
+  color: #fff;
+}
+
+.sub {
+  color: #bbb;
+  font-size: 0.92rem;
+}
+
+.muted {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thumb {
+    width: 80px;
+    height: 80px;
+  }
+}

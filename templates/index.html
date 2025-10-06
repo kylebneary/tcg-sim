@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Stage: YouTube-style video area -->
+<section>
+  <div class="stage">
+    <div class="stage-inner">
+      <video id="vid" controls playsinline></video>
+    </div>
+  </div>
+
+  <div class="controls">
+    <!-- Video file upload FIRST (as requested) -->
+    <label class="btn secondary" for="videoFile">Choose Video</label>
+    <input id="videoFile" type="file" accept="video/*" style="display:none" />
+    <button id="loadBtn" class="btn">Load Video</button>
+
+    <button id="captureBtn" class="btn" disabled>Capture Frame (C)</button>
+    <button id="clearBtn" class="btn secondary">Clear Grid</button>
+    <span id="status" class="hint">Upload a video, click Load, then press <b>Capture</b> or hit <b>C</b>.</span>
+  </div>
+</section>
+
+<!-- Results grid: 2 rows × 5 cols -->
+<section class="grid" id="resultGrid">
+  {% for i in range(1, 11) %}
+    <div id="slot-{{ i }}" class="tile empty">
+      <div class="hint">Empty slot {{ i }}</div>
+    </div>
+  {% endfor %}
+</section>
+
+<script src="{{ url_for('static', filename='js/player.js') }}"></script>
+{% endblock %}

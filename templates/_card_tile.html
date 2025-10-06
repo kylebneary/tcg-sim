@@ -1,0 +1,9 @@
+<!-- Swapped into a specific slot -->
+<div id="{{ slot_id }}" class="tile">
+  <img class="thumb" src="{{ image_url }}" alt="{{ name }} thumbnail" />
+  <div class="meta">
+    <div class="title">{{ name }}</div>
+    <div class="sub">{{ set_name }} — #{{ number }}</div>
+    <div class="muted">Confidence: {{ '%.0f' % (confidence * 100) }}% • ts={{ ts }}</div>
+  </div>
+</div>
