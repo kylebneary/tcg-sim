@@ -1,7 +1,7 @@
-# tcg-sim
+# tcg-sim #
 This is my new coding project
 
-## Project Brainstorm
+## Project Brainstorm ##
 - GUI Web app (framework TBD)
     - Main video input cell, similar to a Youtube video, capable of capturing a live video feed, or enabling a user to upload a video file
     - Drop-down to select set of pack being opened
@@ -15,7 +15,7 @@ This is my new coding project
         - Code to scrape data from some online source (TBD)
         - Maybe look for a place where someone else has already compiled these data
 
-### Tasks
+### Tasks ###
 1. Ask ChatGPT for recommendations on Front-end framework
 2. Build single-page GUI front-end
 3. Find and scrape data on Pokemon TCG cards
@@ -23,3 +23,6 @@ This is my new coding project
 5. AI engine to identify cards
 6. Integrate
 7. Launch (host on public cloud: probably GCP)
+
+## Data Acquisition ##
+Data for this project are currently sourced from https://github.com/PokemonTCG/pokemon-tcg-data. In the future, I plan to source data from an official source.
